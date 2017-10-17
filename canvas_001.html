@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas Resize</title>
+    <style media="screen">
+      body {
+        margin: 0;
+      }
+      canvas{
+        margin: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      var canvas = document.getElementById('canvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      console.log(canvas.height);
+
+      var ctx = canvas.getContext('2d');
+
+      // Rectangle
+      ctx.fillStyle = 'rgba(100, 100, 100, .5)'
+      ctx.fillRect(200, 100, 10, 10);
+      ctx.fillRect(600, 100, 10, 10);
+      ctx.fillRect(1000, 100, 10, 10);
+
+      // Line
+      ctx.beginPath();
+      ctx.moveTo(200, 100);
+      ctx.lineTo(600, 100);
+      ctx.lineTo(1000, 100);
+      ctx.strokeStyle="#C00000";
+      ctx.stroke();
+
+      // Arc / Circle
+      ctx.beginPath();
+      ctx.arc(300, 300, 30, 0, Math.PI*1.25, false);
+      ctx.stroke();
+    </script>
+  </body>
+</html>
