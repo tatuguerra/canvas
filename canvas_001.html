@@ -30,17 +30,44 @@
       ctx.fillRect(1000, 100, 10, 10);
 
       // Line
-      ctx.beginPath();
-      ctx.moveTo(200, 100);
-      ctx.lineTo(600, 100);
-      ctx.lineTo(1000, 100);
-      ctx.strokeStyle="#C00000";
-      ctx.stroke();
+      //ctx.beginPath();
+      //ctx.moveTo(200, 100);
+      //ctx.lineTo(600, 100);
+      //ctx.lineTo(1000, 100);
+      //ctx.strokeStyle="#C00000";
+      //ctx.stroke();
 
       // Arc / Circle
-      ctx.beginPath();
-      ctx.arc(300, 300, 30, 0, Math.PI*1.25, false);
-      ctx.stroke();
+      //ctx.beginPath();
+      //ctx.arc(300, 300, 30, 0, Math.PI*1.25, false);
+      //ctx.strokeStyle = "blue";
+      //ctx.stroke();
+
+      for(i=0; i<200; i++){
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
+        var r = Math.random() * 2;
+        var re = Math.floor(Math.random() * 254);
+        var g = Math.floor(Math.random() * 254);
+        var b = Math.floor(Math.random() * 254);
+
+        var rx = (Math.cos(i/200)*canvas.width/2)+canvas.width/8;
+        var ry = (Math.cos(i/200)*canvas.height/2)+canvas.height/8;
+
+
+        // Line
+        ctx.beginPath();
+        ctx.moveTo(canvas.width/2, canvas.height/2);
+        ctx.lineTo(rx, ry);
+        ctx.strokeStyle="#C00000";
+        ctx.stroke();
+
+        // Arc / Circle
+        ctx.beginPath();
+        ctx.arc(x, y, 30, 0, Math.PI*r, false);
+        ctx.strokeStyle = 'rgb(' + re + ',' + g +',0)';
+        ctx.stroke();
+      }
     </script>
   </body>
 </html>
